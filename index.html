@@ -1,0 +1,2069 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RP Digital Studio | Affordable Websites for South African Small Businesses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* === CSS Variables === */
+      :root {
+        --bg-color: #050505;
+        --card-bg: rgba(255, 255, 255, 0.03);
+        --accent-color: #f27d26; /* Changed to a premium warm orange instead of standard purple */
+        --accent-hover: #d96d1f;
+        --text-main: #ffffff;
+        --text-muted: rgba(255, 255, 255, 0.6);
+        --border-color: rgba(255, 255, 255, 0.08);
+        --transition-speed: 0.4s;
+        --font-serif: "Playfair Display", serif;
+      }
+
+      /* === Base Styles === */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        overflow-x: hidden;
+      }
+
+      body {
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* === Utility Classes === */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .section {
+        padding: 100px 0;
+      }
+
+      .section-title {
+        font-size: 0.75rem;
+        font-weight: 900;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.3);
+        text-align: left;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        border-radius: 9999px;
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: all var(--transition-speed) ease;
+        text-align: center;
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: var(--accent-color);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: var(--text-main);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+      }
+
+      /* Fade-in Animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* === Navigation === */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+        transition: padding 0.3s ease;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+        font-family: var(--font-serif);
+      }
+
+      .logo span {
+        color: var(--accent-color);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-link {
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        transition: color var(--transition-speed) ease;
+        position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--text-main);
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: var(--accent-color);
+        transition: width var(--transition-speed) ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      /* Hamburger */
+      .hamburger {
+        display: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 24px;
+        height: 20px;
+        position: relative;
+        z-index: 1001;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: var(--text-main);
+        position: absolute;
+        transition: all 0.3s ease;
+        left: 0;
+      }
+
+      .hamburger span:nth-child(1) {
+        top: 0;
+      }
+      .hamburger span:nth-child(2) {
+        top: 9px;
+      }
+      .hamburger span:nth-child(3) {
+        top: 18px;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 9px;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #050505;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s ease;
+        z-index: 999;
+      }
+
+      .mobile-menu.active {
+        right: 0;
+      }
+
+      .mobile-menu .nav-link {
+        font-size: 1.5rem;
+      }
+
+      /* === Hero Section === */
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding-top: 70px; /* Offset for nav */
+        position: relative;
+        background: radial-gradient(
+          circle at 50% 0%,
+          rgba(242, 125, 38, 0.15),
+          transparent 50%
+        );
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60vw;
+        height: 60vw;
+        background: radial-gradient(
+          circle,
+          rgba(242, 125, 38, 0.08) 0%,
+          transparent 60%
+        );
+        filter: blur(80px);
+        z-index: -1;
+      }
+
+      .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+      }
+
+      .hero h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(4rem, 8vw, 7.5rem);
+        font-weight: 400;
+        line-height: 1.05;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+      }
+
+      .hero h1 span.italic {
+        font-style: italic;
+        color: var(--accent-color);
+      }
+
+      .hero p {
+        font-size: 1.125rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        max-width: 32rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      /* === Services Section === */
+      #services {
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 3rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform var(--transition-speed) ease,
+          border-color var(--transition-speed) ease,
+          box-shadow var(--transition-speed) ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(242, 125, 38, 0.3);
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 40px rgba(242, 125, 38, 0.05);
+      }
+
+      .card h3 {
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+      }
+
+      .card .price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 2rem;
+      }
+
+      .card .price span {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--text-muted);
+      }
+
+      .features {
+        margin-bottom: 2rem;
+        flex-grow: 1;
+      }
+
+      .features li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-muted);
+        font-size: 0.875rem;
+      }
+
+      .features li::before {
+        content: "✓";
+        color: var(--accent-color);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+
+      .card.featured {
+        border-color: rgba(242, 125, 38, 0.5);
+        transform: scale(1.02);
+        background: linear-gradient(
+          180deg,
+          rgba(242, 125, 38, 0.05) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+      }
+
+      .card.featured:hover {
+        transform: scale(1.02) translateY(-8px);
+      }
+
+      .badge {
+        background-color: var(--accent-color);
+        color: white;
+        font-size: 0.5625rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+        letter-spacing: 0.05em;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      /* === Portfolio Section === */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .portfolio-card {
+        background-color: var(--card-bg);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        transition: transform var(--transition-speed) ease;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .img-placeholder {
+        width: 100%;
+        height: 220px;
+        background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+        position: relative;
+      }
+
+      .portfolio-content {
+        padding: 1.5rem;
+      }
+
+      .portfolio-content h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .portfolio-content p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
+
+      /* === About Section === */
+      #about {
+      }
+
+      .about-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .profile-img-placeholder {
+        width: 100%;
+        aspect-ratio: 1/1;
+        background: linear-gradient(135deg, var(--accent-color), #2a2a2a);
+        border-radius: 24px;
+        position: relative;
+      }
+
+      .profile-img-placeholder::after {
+        content: "Profile Photo";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+      }
+
+      .about-text p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+
+      .stat-item h4 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 0.25rem;
+      }
+
+      .stat-item p {
+        font-size: 0.625rem;
+        margin-bottom: 0;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      /* === Testimonials === */
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .testimonial-card {
+        background-color: var(--card-bg);
+        padding: 2.5rem;
+        border-radius: 1rem;
+        border: 1px solid var(--border-color);
+        position: relative;
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        font-size: 4rem;
+        color: var(--border-color);
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        line-height: 1;
+        font-family: serif;
+      }
+
+      .quote {
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+        position: relative;
+        z-index: 1;
+      }
+
+      .client-info h4 {
+        font-size: 0.875rem;
+        color: var(--text-main);
+        font-weight: 700;
+      }
+
+      .client-info p {
+        font-size: 0.625rem;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+      }
+
+      /* === Contact Form === */
+      #contact {
+      }
+
+      .contact-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: var(--card-bg);
+        padding: 3rem;
+        border-radius: 1rem;
+        border: 1px solid var(--border-color);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-main);
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+        color: var(--text-main);
+        font-family: inherit;
+        font-size: 0.75rem;
+        transition: border-color var(--transition-speed) ease;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--accent-color);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .contact-btn {
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      /* === Footer === */
+      footer {
+        padding: 2rem 0;
+        border-top: 1px solid var(--border-color);
+      }
+
+      footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .social-links a {
+        color: var(--text-main);
+        font-size: 0.625rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        transition: color var(--transition-speed) ease;
+      }
+
+      .social-links a:hover {
+        color: var(--accent-color);
+      }
+
+      .copyright {
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.625rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+
+      /* === Media Queries === */
+      @media (max-width: 900px) {
+        .about-layout {
+          grid-template-columns: 1fr;
+        }
+        .profile-img-placeholder {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none; /* Hidden on mobile */
+        }
+        .hamburger {
+          display: block;
+        }
+        .card.featured {
+          transform: scale(1);
+        }
+        .card.featured:hover {
+          transform: translateY(-8px);
+        }
+        .hero-buttons {
+          flex-direction: column;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          text-align: center;
+        }
+        .contact-container {
+          padding: 2rem 1.5rem;
+        }
+      }
+      /* === WhatsApp Float === */
+      .wa-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .wa-float:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0px 6px 15px rgba(37, 211, 102, 0.4);
+        color: #fff;
+      }
+      .wa-float svg {
+        width: 35px;
+        height: 35px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .wa-float {
+          width: 50px;
+          height: 50px;
+          bottom: 20px;
+          right: 20px;
+        }
+        .wa-float svg {
+          width: 28px;
+          height: 28px;
+        }
+      }
+
+      /* === Chatbot === */
+      .chatbot-widget {
+        position: fixed;
+        bottom: 110px;
+        right: 40px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .chatbot-bubble {
+        width: 60px;
+        height: 60px;
+        background-color: var(--accent-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .chatbot-bubble:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(242, 125, 38, 0.4);
+      }
+
+      .chatbot-bubble.active {
+        transform: rotate(90deg);
+        background-color: #333;
+      }
+
+      .chatbot-window {
+        position: absolute;
+        bottom: 75px;
+        right: 0;
+        width: 380px;
+        max-width: calc(100vw - 40px);
+        height: 500px;
+        max-height: calc(100vh - 140px);
+        background: rgba(15, 15, 15, 0.98);
+        backdrop-filter: blur(30px);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        z-index: 1001;
+      }
+
+      .chatbot-window.visible {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .chatbot-header {
+        padding: 1.5rem;
+        background: rgba(242, 125, 38, 0.1);
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .chatbot-header .avatar {
+        width: 40px;
+        height: 40px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: white;
+        font-family: var(--font-serif);
+      }
+
+      .chatbot-header .info h4 {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: white;
+      }
+
+      .chatbot-header .info p {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      .chat-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-color) transparent;
+      }
+
+      .chat-messages::-webkit-scrollbar {
+        width: 6px;
+      }
+      .chat-messages::-webkit-scrollbar-thumb {
+        background-color: var(--border-color);
+        border-radius: 10px;
+      }
+
+      .message {
+        max-width: 85%;
+        padding: 0.875rem 1.125rem;
+        border-radius: 18px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        position: relative;
+        word-wrap: break-word;
+      }
+
+      .message.user {
+        align-self: flex-end;
+        background: var(--accent-color);
+        color: white;
+        border-bottom-right-radius: 2px;
+        box-shadow: 0 4px 12px rgba(242, 125, 38, 0.2);
+      }
+
+      .message.ai {
+        align-self: flex-start;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        color: var(--text-main);
+        border-bottom-left-radius: 2px;
+      }
+
+      .message.ai strong {
+        color: var(--accent-color);
+        font-weight: 600;
+      }
+
+      .message.ai p {
+        margin-bottom: 0.5rem;
+      }
+      .message.ai p:last-child {
+        margin-bottom: 0;
+      }
+
+      .chat-input-area {
+        padding: 1.25rem;
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        gap: 0.75rem;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .chat-input-area input {
+        flex-grow: 1;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 0.875rem 1rem;
+        color: white;
+        font-size: 0.875rem;
+        transition: border-color 0.2s ease;
+      }
+
+      .chat-input-area input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+      }
+
+      .chat-input-area button {
+        background: var(--accent-color);
+        color: white;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+
+      .chat-input-area button:hover {
+        background: var(--accent-hover);
+        transform: translateY(-2px);
+      }
+
+      .typing-indicator {
+        display: none;
+        align-self: flex-start;
+        padding: 0.5rem 1.5rem;
+        margin: 0 1.5rem 1rem;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 20px;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        font-style: italic;
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      @media screen and (min-width: 769px) {
+        .mobile-menu {
+          display: none !important;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .chatbot-window {
+          position: fixed;
+          width: calc(100vw - 40px);
+          right: 20px;
+          bottom: 90px;
+          height: calc(100vh - 120px);
+          max-height: 600px;
+        }
+        .chatbot-widget {
+          bottom: 20px;
+          right: 20px;
+        }
+        /* Move WA button on mobile if needed */
+        .wa-float {
+          bottom: 90px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sticky Navigation -->
+    <nav id="navbar">
+      <div class="container nav-container">
+        <a
+          href="#hero"
+          class="logo"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+          "
+        >
+          <svg
+            width="45"
+            height="35"
+            viewBox="0 0 70 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- Pixels -->
+            <rect x="0" y="10" width="8" height="8" fill="#00A3FF" />
+            <rect x="12" y="0" width="8" height="8" fill="#00A3FF" />
+            <rect x="12" y="12" width="8" height="8" fill="#00A3FF" />
+            <rect x="24" y="6" width="8" height="8" fill="#00A3FF" />
+            <rect x="0" y="24" width="8" height="8" fill="#007BFF" />
+            <rect x="12" y="24" width="8" height="8" fill="#007BFF" />
+            <rect x="12" y="36" width="8" height="8" fill="#007BFF" />
+            <rect x="24" y="18" width="8" height="8" fill="#007BFF" />
+
+            <!-- R and P shapes -->
+            <path
+              d="M30 10H46C53 10 57 15 57 21C57 27 53 32 46 32H30V10Z"
+              fill="#FFFFFF"
+            />
+            <path d="M36 32L40 32L54 50H68L50 28H44Z" fill="#FFFFFF" />
+            <rect x="30" y="10" width="8" height="40" fill="#FFFFFF" />
+
+            <path
+              d="M48 20H62C68 20 72 24 72 29C72 34 68 38 62 38H48V20Z"
+              fill="#007BFF"
+            />
+            <rect x="44" y="20" width="8" height="30" fill="#007BFF" />
+          </svg>
+          <div
+            style="
+              font-family: &quot;Inter&quot;, sans-serif;
+              font-weight: 800;
+              font-size: 1.15rem;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              display: flex;
+              gap: 5px;
+            "
+          >
+            <span style="color: #ffffff">DIGITAL</span>
+            <span style="color: #007bff">STUDIO</span>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#payment" class="nav-link">Pay</a>
+        </div>
+        <button class="hamburger" aria-label="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu">
+        <a href="#services" class="nav-link mobile-link">Services</a>
+        <a href="#portfolio" class="nav-link mobile-link">Portfolio</a>
+        <a href="#about" class="nav-link mobile-link">About</a>
+        <a href="#testimonials" class="nav-link mobile-link">Testimonials</a>
+        <a href="#payment" class="nav-link mobile-link">Pay</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero fade-in">
+      <div class="container hero-content">
+        <h1>Look big. <span class="italic">Spend small.</span></h1>
+        <p>
+          Professional websites for South African small businesses — starting
+          from R799. Delivered in days, not months.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Get a free quote</a>
+          <a href="#portfolio" class="btn btn-secondary">View my work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Investment Packages</h2>
+        <div class="services-grid">
+          <!-- Launch Card -->
+          <div class="card fade-in">
+            <h3>Launch</h3>
+            <div class="price">R799–R999</div>
+            <ul class="features">
+              <li>1-page "digital business card"</li>
+              <li>Contact form integration</li>
+              <li>Mobile responsive design</li>
+              <li>Basic on-page SEO</li>
+              <li>3-day delivery promise</li>
+            </ul>
+          </div>
+          <!-- Grow Card -->
+          <div class="card featured fade-in" style="transition-delay: 0.1s">
+            <div class="badge">Most popular</div>
+            <h3>Grow</h3>
+            <div class="price">R1 999–R2 999</div>
+            <ul class="features">
+              <li>Up to 5 page custom site</li>
+              <li>WhatsApp chat widget</li>
+              <li>Basic Google Business setup included</li>
+              <li>Comprehensive SEO optimization</li>
+              <li>Fast loading speeds</li>
+              <li>1 month priority support</li>
+            </ul>
+          </div>
+          <!-- Scale Card -->
+          <div class="card fade-in" style="transition-delay: 0.2s">
+            <h3>Scale</h3>
+            <div class="price">R5 999–R8 999</div>
+            <ul class="features">
+              <li>Custom E-commerce / Web App</li>
+              <li>Complex dynamic functionality</li>
+              <li>Database & User auth integration</li>
+              <li>Clearly best value vs any agency</li>
+              <li>Performance audit & tuning</li>
+              <li>3 months priority support</li>
+            </ul>
+          </div>
+          <!-- Care Plan Card -->
+          <div
+            class="card fade-in"
+            style="
+              transition-delay: 0.3s;
+              background: linear-gradient(
+                180deg,
+                var(--bg-color) 0%,
+                rgba(242, 125, 38, 0.05) 100%
+              );
+              border-color: rgba(242, 125, 38, 0.3);
+            "
+          >
+            <h3>
+              Care Plan
+              <span
+                style="
+                  font-size: 0.6rem;
+                  vertical-align: top;
+                  background: var(--accent-color);
+                  color: white;
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  margin-left: 5px;
+                "
+                >NEW</span
+              >
+            </h3>
+            <div class="price">R299<span>/mo</span></div>
+            <ul class="features">
+              <li>Reliable hosting & uptime</li>
+              <li>Regular security updates</li>
+              <li>1 content change per month</li>
+              <li>Peace of mind maintenance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 5rem">
+        <h2 class="section-title fade-in">High-Impact Growth Add-ons</h2>
+        <div
+          class="services-grid"
+          style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"
+        >
+          <!-- Google Business -->
+          <div class="card fade-in">
+            <h3>Google Business Profile</h3>
+            <div class="price" style="font-size: 1.5rem; margin-bottom: 1.5rem">
+              R299<span style="font-size: 0.75rem"> once-off</span>
+            </div>
+            <ul class="features">
+              <li>We put your business on Google Maps</li>
+              <li>Show up when people search for your services</li>
+              <li>Get more calls and walk-in customers</li>
+            </ul>
+          </div>
+          <!-- WhatsApp Business -->
+          <div class="card fade-in" style="transition-delay: 0.1s">
+            <h3>WhatsApp Business</h3>
+            <div class="price" style="font-size: 1.5rem; margin-bottom: 1.5rem">
+              R99<span style="font-size: 0.75rem"> once-off</span>
+            </div>
+            <ul class="features">
+              <li>Connect it directly to your new website</li>
+              <li>Setup automatic greeting messages</li>
+              <li>Make it easy for customers chat with you</li>
+            </ul>
+          </div>
+          <!-- Website Audit -->
+          <div class="card fade-in" style="transition-delay: 0.2s">
+            <h3>5-Point Website Audit</h3>
+            <div class="price" style="font-size: 1.5rem; margin-bottom: 1.5rem">
+              FREE
+            </div>
+            <ul class="features">
+              <li>We check your current website</li>
+              <li>Find out why you aren't getting customers</li>
+              <li>Get a simple report on what to fix</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Recent Work</h2>
+        <div class="portfolio-grid">
+          <!-- Project 1 -->
+          <div class="portfolio-card fade-in">
+            <div
+              class="img-placeholder"
+              style="background: linear-gradient(45deg, #2b1154, #1a0a33)"
+            ></div>
+            <div class="portfolio-content">
+              <h3>FinTech Landing Page</h3>
+              <p>
+                High-conversion landing page designed for a modern finance
+                startup with complex 3D animations.
+              </p>
+              <a
+                href="#"
+                class="btn btn-secondary"
+                style="
+                  width: 100%;
+                  border-color: rgba(255, 255, 255, 0.1);
+                  padding: 0.5rem;
+                "
+                >View site</a
+              >
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="portfolio-card fade-in" style="transition-delay: 0.1s">
+            <div
+              class="img-placeholder"
+              style="background: linear-gradient(45deg, #102a24, #081714)"
+            ></div>
+            <div class="portfolio-content">
+              <h3>E-commerce Storefront</h3>
+              <p>
+                A headless Shopify integration offering sub-second page loads
+                and a seamless checkout experience.
+              </p>
+              <a
+                href="#"
+                class="btn btn-secondary"
+                style="
+                  width: 100%;
+                  border-color: rgba(255, 255, 255, 0.1);
+                  padding: 0.5rem;
+                "
+                >View site</a
+              >
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="portfolio-card fade-in" style="transition-delay: 0.2s">
+            <div
+              class="img-placeholder"
+              style="background: linear-gradient(45deg, #331500, #1f0d00)"
+            ></div>
+            <div class="portfolio-content">
+              <h3>Restaurant Ordering App</h3>
+              <p>
+                A full-stack web application allowing customers to place orders
+                directly from their tables using QR codes.
+              </p>
+              <a
+                href="#"
+                class="btn btn-secondary"
+                style="
+                  width: 100%;
+                  border-color: rgba(255, 255, 255, 0.1);
+                  padding: 0.5rem;
+                "
+                >View site</a
+              >
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="portfolio-card fade-in" style="transition-delay: 0.3s">
+            <div
+              class="img-placeholder"
+              style="background: linear-gradient(45deg, #0f2e1a, #061a0d)"
+            ></div>
+            <div class="portfolio-content">
+              <h3>Siyabonga Recycling</h3>
+              <p>
+                A digital platform for a sustainable waste management company
+                focused on creating jobs and eco-initiatives.
+              </p>
+              <a
+                href="https://siyabonga-recycling-2i6u.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+                style="
+                  width: 100%;
+                  border-color: rgba(255, 255, 255, 0.1);
+                  padding: 0.5rem;
+                "
+                >View site</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container about-layout">
+        <div class="profile-img-placeholder fade-in"></div>
+        <div class="about-text fade-in">
+          <h2
+            style="
+              font-size: 2.5rem;
+              margin-bottom: 1.5rem;
+              color: white;
+              font-weight: 800;
+              letter-spacing: -1px;
+            "
+          >
+            About RP Digital Studio
+          </h2>
+          <p>
+            Hi, I'm Roland. I build blazing fast, user-centric web experiences
+            that help brands look big without spending like it. With a passion
+            for clean code and modern design, I don't just build websites—I
+            build digital assets that scale your operations.
+          </p>
+          <p>
+            Every line of code is written with performance, accessibility, and
+            conversion in mind. Let's create something extraordinary together.
+          </p>
+
+          <div class="stats-grid" style="margin-top: 3rem">
+            <div class="stat-item">
+              <h4>10+</h4>
+              <p>Sites Built</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Fast Turnaround</p>
+            </div>
+            <div class="stat-item">
+              <h4>24/7</h4>
+              <p>Deployed Globally</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">What Clients Say</h2>
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card fade-in">
+            <p class="quote">
+              "Working with RP Digital Studio completely transformed our digital
+              presence. Our new site looks like a million bucks, but the pricing
+              was incredibly fair. Highly recommended!"
+            </p>
+            <div class="client-info">
+              <h4>Ernest Ticha</h4>
+              <p>Owner, Siyabonga Recycling</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title fade-in">Start Your Project</h2>
+        <div class="contact-container fade-in">
+          <form
+            id="contact-form"
+            action="https://formsubmit.co/Pennroland550@gmail.com"
+            method="POST"
+          >
+            <!-- Honeypot for spam protection -->
+            <input type="text" name="_honey" style="display: none" />
+            <!-- Disable Captcha -->
+            <input type="hidden" name="_captcha" value="false" />
+            <!-- Success Redirect -->
+            <input type="hidden" name="_next" id="contact-next-url" value="" />
+
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="John Doe"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="name@company.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="businessType">Business Type</label>
+              <input
+                type="text"
+                id="businessType"
+                name="businessType"
+                placeholder="e.g. Startup, Retail, Consulting"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Project Budget</label>
+              <select id="budget" name="budget" required>
+                <option value="" disabled selected>Select from dropdown</option>
+                <option value="Launch (R799-R999)">Launch (R799-R999)</option>
+                <option value="Grow (R1999-R2999)">Grow (R1,999-R2,999)</option>
+                <option value="Scale (R5999-R8999)">Scale (R5,999-R8,999)</option>
+                <option value="Care Plan (R299/mo)">Care Plan (R299/mo)</option>
+                <option value="Add-on only">Add-on only</option>
+                <option value="Not sure - just exploring">Not sure - just exploring</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Description</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Tell me about your goals, features you need, and timeline..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary contact-btn">
+              Send Inquiry
+            </button>
+            <p style="text-align: center; font-size: 0.875rem; color: var(--text-muted); margin-top: 1rem;">
+              By submitting this form you agree to our <a href="/privacy.html" style="color: var(--accent-color); text-decoration: underline;">Privacy Policy</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Section (Paywall) -->
+    <section id="payment" class="section">
+      <div class="container">
+        <h2 class="section-title fade-in" style="margin-bottom: 1rem">
+          Secure Payment
+        </h2>
+        <p
+          style="
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          Ready to get started? Enter the agreed project amount to secure your
+          spot. <br />
+          <strong style="color: var(--accent-color)">Recommendation:</strong>
+          Please enquire about pricing using the form above before you make a
+          payment.
+        </p>
+
+        <div
+          class="contact-container fade-in"
+          style="
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+          "
+        >
+          <div id="paypal-amount-form">
+            <div class="form-group" style="margin-bottom: 1.5rem">
+              <label for="paypal_payment_amount">Payment Amount (ZAR)</label>
+              <input
+                type="number"
+                id="paypal_payment_amount"
+                required
+                min="1"
+                step="1"
+                placeholder="Enter deposit amount in ZAR"
+                style="
+                  width: 100%;
+                  padding: 0.875rem 1rem;
+                  background: rgba(255, 255, 255, 0.03);
+                  border: 1px solid var(--border-color);
+                  border-radius: 12px;
+                  color: white;
+                "
+              />
+              <p
+                id="exchange-rate-note"
+                style="
+                  font-size: 0.75rem;
+                  color: var(--text-muted);
+                  margin-top: 0.5rem;
+                "
+              >
+                Enter the amount in ZAR. Checking exchange rate...
+              </p>
+            </div>
+            <!-- Container for the PayPal Smart Button -->
+            <div
+              id="paypal-button-container"
+              style="min-height: 150px; z-index: 1"
+            ></div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 1.5rem; line-height: 1.5;">
+              Payment Terms: A 50% deposit is required to begin work. Deposits are non-refundable once development has started. Final payment is due upon project delivery. By submitting payment you agree to these terms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div
+        class="container"
+        style="
+          border-bottom: 1px solid var(--border-color);
+          padding-bottom: 2rem;
+          margin-bottom: 2rem;
+        "
+      >
+        <div
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(242, 125, 38, 0.1),
+              rgba(242, 125, 38, 0.05)
+            );
+            border: 1px solid rgba(242, 125, 38, 0.2);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+          "
+        >
+          <h3
+            style="
+              color: white;
+              font-size: 1.25rem;
+              font-weight: 700;
+              margin-bottom: 0.5rem;
+            "
+          >
+            Earn with our Referral Program
+          </h3>
+          <p
+            style="
+              color: var(--text-muted);
+              max-width: 500px;
+              margin: 0 auto;
+              font-size: 0.875rem;
+            "
+          >
+            Refer a client to us and receive a
+            <strong style="color: var(--accent-color)">R200 credit</strong>
+            towards your next invoice or Care Plan month. Word-of-mouth is our
+            cheapest marketing, and we pass the savings to you.
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="social-links">
+          <!-- Social links will be added once profiles are ready -->
+        </div>
+        <p class="copyright">
+          &copy; 2026 RP Digital Studio. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Intersection Observer for fade-in elements
+        const fadeElements = document.querySelectorAll(".fade-in");
+        const fadeObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                // Stop observing once animated in
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px",
+          },
+        );
+
+        fadeElements.forEach((el) => fadeObserver.observe(el));
+
+        // 2. Active Nav Link Highlighting
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-links .nav-link");
+
+        window.addEventListener("scroll", () => {
+          let currentPos = window.scrollY;
+
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            const sectionId = section.getAttribute("id");
+
+            // Add offset tolerance
+            if (
+              currentPos >= sectionTop - 150 &&
+              currentPos < sectionTop + sectionHeight - 150
+            ) {
+              navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${sectionId}`) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+
+          // Clear active if at the very top (above hero trigger)
+          if (window.scrollY < 100) {
+            navLinks.forEach((link) => link.classList.remove("active"));
+          }
+        });
+
+        // 3. Mobile Hamburger Menu Toggle
+        const hamburger = document.querySelector(".hamburger");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+        const body = document.querySelector("body");
+
+        const toggleMenu = () => {
+          hamburger.classList.toggle("active");
+          mobileMenu.classList.toggle("active");
+
+          // Prevent scrolling when menu is open
+          if (mobileMenu.classList.contains("active")) {
+            body.style.overflow = "hidden";
+          } else {
+            body.style.overflow = "";
+          }
+        };
+
+        hamburger.addEventListener("click", toggleMenu);
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            mobileMenu.classList.remove("active");
+            body.style.overflow = "";
+          });
+        });
+      });
+    </script>
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+      <div class="chatbot-window" id="chat-window">
+        <div class="chatbot-header">
+          <div class="avatar">RP</div>
+          <div class="info">
+            <h4>RP Studio Assistant</h4>
+            <p>Online | Ask me anything</p>
+          </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="message ai">
+            Hi! I'm Roland's AI assistant. Looking for a high-performing
+            website? Tell me a bit about your business, and I can recommend the
+            exact package you need or answer any pricing questions!
+          </div>
+        </div>
+        <div class="typing-indicator" id="typing-indicator">
+          Assistant is thinking...
+        </div>
+        <form class="chat-input-area" id="chat-form">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type your message..."
+            required
+            autocomplete="off"
+          />
+          <button type="submit" aria-label="Send message">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <div class="chatbot-bubble" id="chat-toggle" aria-label="Open Chat">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/27746567209"
+      class="wa-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      const chatToggle = document.getElementById("chat-toggle");
+      const chatWindow = document.getElementById("chat-window");
+      const chatForm = document.getElementById("chat-form");
+      const chatInput = document.getElementById("chat-input");
+      const chatMessages = document.getElementById("chat-messages");
+      const typingIndicator = document.getElementById("typing-indicator");
+
+      let isChatOpen = false;
+
+      // Load history from session storage
+      const savedHistory = sessionStorage.getItem("rp_chat_history");
+      let chatHistory = savedHistory
+        ? JSON.parse(savedHistory)
+        : [
+            {
+              role: "user",
+              parts: [
+                {
+                  text: "You are Roland's AI assistant. You just sent a message saying 'Hi! I'm Roland's AI assistant. Looking for a high-performing website? Tell me a bit about your business, and I can recommend the exact package you need or answer any pricing questions!'. Be ready to ask probing questions regarding their business if they give a vague answer.",
+                },
+              ],
+            },
+            {
+              role: "model",
+              parts: [
+                {
+                  text: "Understood! I will help the user figure out string details about their business, recommend a specific package, and suggest Add-ons naturally.",
+                },
+              ],
+            },
+          ];
+
+      // Restore messages on load if they exist
+      if (savedHistory) {
+        const displayedHistory = JSON.parse(savedHistory);
+        // Start from index 2 to skip the initial hidden prompts
+        displayedHistory.forEach((msg, index) => {
+          if (index > 1) {
+            const role = msg.role === "model" ? "ai" : "user";
+            appendMessage(msg.parts[0].text, role, true);
+          }
+        });
+      }
+
+      const toggleChat = () => {
+        isChatOpen = !isChatOpen;
+        chatToggle.classList.toggle("active");
+        chatWindow.classList.toggle("visible");
+        if (isChatOpen) {
+          chatInput.focus();
+        }
+      };
+
+      chatToggle.addEventListener("click", toggleChat);
+
+      // Markdown-lite formatter
+      const formatText = (text) => {
+        let formatted = text
+          .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+          .replace(/\*(.*?)\*/g, "<em>$1</em>")
+          .replace(/\n\n/g, "</p><p>")
+          .replace(/\n/g, "<br>");
+        return `<p>${formatted}</p>`;
+      };
+
+      function appendMessage(content, role, isRestoring = false) {
+        const msgDiv = document.createElement("div");
+        msgDiv.className = `message ${role}`;
+
+        if (role === "ai") {
+          msgDiv.innerHTML = formatText(content);
+        } else {
+          msgDiv.textContent = content;
+        }
+
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        if (!isRestoring) {
+          sessionStorage.setItem(
+            "rp_chat_history",
+            JSON.stringify(chatHistory),
+          );
+        }
+
+        return msgDiv;
+      }
+
+      const systemInstruction = `You are the RP Digital Studio Assistant. Your goal is to help businesses upgrade their digital presence effectively and affordably.
+We follow the 'Look big. Spend small.' philosophy, helping brands compete with giants.
+
+Packages (all in South African Rand - R):
+1. Launch (R799-R999): 1-page "digital business card". Perfect for new businesses needing a professional contact point. 3-day delivery.
+2. Grow (R1999-R2999): Up to 5 pages. Includes WhatsApp chat widget and Google Business setup. Best for growing local businesses.
+3. Scale (R5999-R8999): E-commerce stores or custom web apps. High value vs agencies. Includes 3-month support.
+4. Care Plan (R299/month): Optional hosting, security, and monthly content updates.
+
+Add-ons:
+- Google Business Profile (R299): We put you on Google Maps so locals can find you.
+- WhatsApp Business (R99): Link your site to WhatsApp with auto-replies.
+- 5-Point Website Audit (FREE): We'll tell you what's wrong with your current site for free.
+
+Your Tone: Professional yet simple. Avoid tech jargon like "responsive" or "CMS" unless you explain them (e.g., "Responsive means it looks great on phones too"). Be persuasive and encouraging.
+Referral Program: Tell people they can get R200 off their invoice if they refer a friend.
+
+Conversion Goal: Try to understand their business and recommend the right package. If they are unsure, suggest a free Audit or the Launch package to get started.`;
+
+      chatForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const userText = chatInput.value.trim();
+        if (!userText) return;
+
+        appendMessage(userText, "user");
+        chatInput.value = "";
+        typingIndicator.style.display = "block";
+
+        try {
+          const contents = [
+            ...chatHistory,
+            { role: "user", parts: [{ text: userText }] },
+          ];
+
+          const response = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ contents, systemInstruction })
+          });
+
+          if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+          }
+
+          const responseData = await response.json();
+          typingIndicator.style.display = "none";
+          const aiText = responseData.text;
+
+          // Update history before appending to ensure storage is correct
+          chatHistory.push({ role: "user", parts: [{ text: userText }] });
+          chatHistory.push({ role: "model", parts: [{ text: aiText }] });
+
+          if (chatHistory.length > 20) {
+            chatHistory = [chatHistory[0], ...chatHistory.slice(-19)];
+          }
+
+          appendMessage(aiText, "ai");
+        } catch (error) {
+          console.error("Chat Error:", error);
+          typingIndicator.style.display = "none";
+          appendMessage(
+            "Sorry, I encountered an error. Please try again or reach out via WhatsApp!",
+            "ai",
+          );
+        }
+      });
+
+      // Proactive Chatbot Helper
+      setTimeout(() => {
+        if (!isChatOpen && chatHistory.length === 3 && !savedHistory) {
+          toggleChat();
+        }
+      }, 30000);
+    </script>
+    <!-- Replace 'sb' with your actual PayPal Client ID from developer.paypal.com to receive live transactions -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AfHhHAnnPglyuuFJB6esIT51PCJHjVWqVgmJ2Ow_Y-_W4P5IIV4tqwf5BeEmgeVhYxHukeGUbK8EE6xd&currency=USD"></script>
+    <script>
+      // Setup dynamic URLs for forms
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentOrigin = window.location.origin;
+        const thankYouUrl = currentOrigin + "/thank-you-inquiry.html";
+
+        const contactNextUrl = document.getElementById("contact-next-url");
+        if (contactNextUrl) {
+          contactNextUrl.value = thankYouUrl;
+        }
+
+        // Initialize PayPal Smart Buttons
+        const paypalAmountInput = document.getElementById(
+          "paypal_payment_amount",
+        );
+        const exchangeRateNote = document.getElementById("exchange-rate-note");
+
+        let zarToUsdRate = 18;
+        
+        // Fetch rate once on load
+        fetch("/api/exchange-rate")
+          .then(res => res.json())
+          .then(data => {
+            if (data.rate) {
+              zarToUsdRate = data.rate;
+              paypalAmountInput.addEventListener("input", () => {
+                const amountZar = parseFloat(paypalAmountInput.value);
+                if (!isNaN(amountZar) && amountZar > 0) {
+                  const amountUsd = (amountZar / zarToUsdRate).toFixed(2);
+                  exchangeRateNote.textContent = `You will be charged approximately $${amountUsd} USD (at today's rate of R${zarToUsdRate.toFixed(2)}/USD).`;
+                } else {
+                  exchangeRateNote.textContent = `Enter the amount in ZAR. (Today's rate: R${zarToUsdRate.toFixed(2)}/USD)`;
+                }
+              });
+              exchangeRateNote.textContent = `Enter the amount in ZAR. (Today's rate: R${zarToUsdRate.toFixed(2)}/USD)`;
+            }
+          })
+          .catch(err => {
+            console.error("Rate fetch failed", err);
+            exchangeRateNote.textContent = "Enter the amount in ZAR.";
+          });
+
+        if (window.paypal) {
+          window.paypal
+            .Buttons({
+              onClick: function (data, actions) {
+                const amount = parseFloat(paypalAmountInput.value);
+                const isValidAmount = (!isNaN(amount) && amount > 0);
+
+                if (!isValidAmount) {
+                  alert(
+                    "Please enter a valid payment amount first before clicking the payment button."
+                  );
+                  return actions.reject();
+                } else {
+                  return actions.resolve();
+                }
+              },
+              createOrder: async function (data, actions) {
+                const amountZar = parseFloat(paypalAmountInput.value);
+                let zarToUsdRate = 18;
+                try {
+                  const res = await fetch("/api/exchange-rate");
+                  const json = await res.json();
+                  if (json.rate) zarToUsdRate = json.rate;
+                } catch (e) {
+                  console.error("Exchange rate fetch failed, using fallback", e);
+                }
+                const amountUsd = (amountZar / zarToUsdRate).toFixed(2);
+                
+                return actions.order.create({
+                  purchase_units: [
+                    {
+                      amount: {
+                        value: amountUsd,
+                        currency_code: "USD",
+                      },
+                      description: "RP Digital Studio Project Payment (ZAR to USD)",
+                    },
+                  ],
+                });
+              },
+              onApprove: function (data, actions) {
+                return fetch("/api/verify-paypal", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ orderID: data.orderID })
+                }).then(res => res.json()).then(result => {
+                  if (result.status === "COMPLETED") {
+                    window.location.href = currentOrigin + "/thank-you-payment.html";
+                  } else {
+                    alert("Payment verification failed. Please contact us.");
+                  }
+                }).catch(err => {
+                  console.error(err);
+                  alert("Something went wrong verifying the payment.");
+                });
+              },
+              onError: function (err) {
+                console.error("PayPal Button Error", err);
+              },
+            })
+            .render("#paypal-button-container");
+        }
+      });
+    </script>
+  </body>
+</html>

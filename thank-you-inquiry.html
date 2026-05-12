@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | RP Digital Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #050505;
+        --card-bg: rgba(255, 255, 255, 0.03);
+        --accent-color: #f27d26;
+        --accent-hover: #d96d1f;
+        --text-main: #ffffff;
+        --text-muted: rgba(255, 255, 255, 0.6);
+        --border-color: rgba(255, 255, 255, 0.08);
+        --font-serif: "Playfair Display", serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 600px;
+        padding: 40px;
+        background: var(--card-bg);
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          0 0 40px rgba(242, 125, 38, 0.05);
+        position: relative;
+        z-index: 10;
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        background: rgba(242, 125, 38, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-color);
+      }
+
+      .icon svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      h1 {
+        font-family: var(--font-serif);
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: var(--accent-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-family: var(--font-serif);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--accent-hover);
+        transform: translateY(-2px);
+      }
+
+      .receipt-info {
+        font-size: 0.875rem;
+        padding: 15px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border-color);
+        margin-bottom: 2rem;
+      }
+
+      /* Background Glow */
+      .bg-glow {
+        position: absolute;
+        width: 60vw;
+        height: 60vw;
+        background: radial-gradient(
+          circle,
+          rgba(242, 125, 38, 0.08) 0%,
+          transparent 60%
+        );
+        filter: blur(80px);
+        z-index: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-glow"></div>
+    <div class="container">
+      <div class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      </div>
+      <h1>Thank You!</h1>
+      <p>
+        We've successfully received your inquiry. We're excited to learn more about your business and will be in touch shortly to discuss your project.
+      </p>
+
+      <div class="receipt-info" style="margin-bottom: 2rem;">
+        <strong>What's Next?</strong><br />
+        We usually review inquiries within 24 hours. Keep an eye on your inbox for our initial response and tailored quote.
+      </div>
+      
+      <a href="/index.html#payment" class="btn" style="background-color: transparent; border: 1px solid var(--accent-color); color: var(--accent-color); margin-bottom: 1rem; display: block; max-width: 300px; margin-left: auto; margin-right: auto;">Ready to get started? Pay your deposit here &rarr;</a>
+      <a href="/" class="btn" style="display: block; max-width: 300px; margin-left: auto; margin-right: auto;">Return to Homepage</a>
+    </div>
+  </body>
+</html>
